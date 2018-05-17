@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-
 Module = {
     TOTAL_MEMORY: 2000000000
 }
@@ -9,7 +8,6 @@ const parser = require('subtitles-parser');
 const search = require('recursive-search');
 const AnkiExport = require('anki-apkg-export').default;
 const program = require('commander');
-let lineNumbers = 0;
 
 program
     .version('0.0.1')
@@ -25,10 +23,12 @@ program
 if (!program.args.length) {
     program.help();
 } else {
+    let lineNumbers = 0;
     let wstream;
+    let directory = program.args[0];
+
     if (program.csv)  wstream= fs.createWriteStream(program.deckname + ".csv");
     const apkg = new AnkiExport(program.deckname + ".apkg");
-    let directory = program.args[0];
     // search all files
     console.log(`Searching for .srt Files in: ${directory}`);
     search.recursiveSearch(/.srt$/, directory, function (err, result) {
@@ -44,6 +44,7 @@ if (!program.args.length) {
 
             console.log(`${i}/${results.length}; Lines: ${data.length} TOTAL: ${lineNumbers}; now processing ${filename}`);
 
+            //write sub lines to files
             data.forEach(line => {
                 if (line.text.length >= program.min) {
                     if (program.csv) {
@@ -58,7 +59,7 @@ if (!program.args.length) {
             lineNumbers = lineNumbers + data.length;
         });
 
-
+        //finish, cleanup
         if (program.csv) {
             console.log(`Wrote ${lineNumbers} Lines to csv`);
             console.log("Closing files....");
