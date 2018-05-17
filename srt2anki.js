@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 Module = {
     TOTAL_MEMORY: 2000000000
 }
@@ -8,6 +7,7 @@ const parser = require('subtitles-parser');
 const search = require('recursive-search');
 const AnkiExport = require('anki-apkg-export').default;
 const program = require('commander');
+
 
 program
     .version('0.0.1')
