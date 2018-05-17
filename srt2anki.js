@@ -20,13 +20,14 @@ program
     .option('-d, --deckname [name]', 'name of the generated deck', "deck")
     .parse(process.argv);
 
-  
+
 
 if (!program.args.length) {
     program.help();
 } else {
-    const apkg = new AnkiExport(program.deckname+".apkg");
-    const wstream = fs.createWriteStream(program.deckname+".csv");
+    let wstream;
+    if (program.csv)  wstream= fs.createWriteStream(program.deckname + ".csv");
+    const apkg = new AnkiExport(program.deckname + ".apkg");
     let directory = program.args[0];
     // search all files
     console.log(`Searching for .srt Files in: ${directory}`);
@@ -65,7 +66,7 @@ if (!program.args.length) {
         } else {
             apkg.save()
                 .then(zip => {
-                    fs.writeFileSync('./subtitles.apkg', zip, 'binary');
+                    fs.writeFileSync(`./${program.deckname}.apkg`, zip, 'binary');
                     console.log(`Package has been generated: subtitles.apkg`);
                 })
                 .catch(err => console.log(err.stack || err));
