@@ -18,5 +18,12 @@
     "subtitles-parser": "0.0.2",
     "yargs": "^11.0.0"
   },
-  "bin" : { "srt2anki" : "./srt2anki.js" } 
+  "bin": {
+    "srt2anki": "./srt2anki.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jufabeck2202/srt2anki"
+  },
+  "homepage": "https://github.com/jufabeck2202/srt2anki#readme"
 }
