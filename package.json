@@ -10,13 +10,9 @@
   "description": "convert srt files to anki decks or csv files.",
   "dependencies": {
     "anki-apkg-export": "^4.0.2",
-    "audio-split": "^1.0.6",
     "commander": "^2.15.1",
-    "ffmpeg": "0.0.4",
-    "fluent-ffmpeg": "^2.1.2",
     "recursive-search": "^1.0.1",
-    "subtitles-parser": "0.0.2",
-    "yargs": "^11.0.0"
+    "subtitles-parser": "0.0.2"
   },
   "keywords": [
     "anki",
