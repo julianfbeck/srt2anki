@@ -25,7 +25,7 @@ srt2anki will search the given folder for .srt files and extract the sub-lines.
     -d, --deckname [name]  name of the generated deck (default: deck)
     -h, --help             output usage information
 ```
-**Due to memmory issues, if you want to convert large files, please use the -csv option to generate a .csv file instead of an anki deck and import it into anki using the import file funcion. This will save you time and memmory**
+**Due to memmory issues, if you want to convert large files, please use the -csv option to generate a .csv file instead of an anki deck and import it into anki using the import file funcion. This will save you time and memmory.**
 
 
 
