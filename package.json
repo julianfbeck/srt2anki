@@ -7,7 +7,7 @@
   },
   "author": "",
   "license": "ISC",
-  "description": "",
+  "description": "convert srt files to anki decks or csv files.",
   "dependencies": {
     "anki-apkg-export": "^4.0.2",
     "audio-split": "^1.0.6",
@@ -18,6 +18,16 @@
     "subtitles-parser": "0.0.2",
     "yargs": "^11.0.0"
   },
+  "keywords": [
+    "anki",
+    "anki-deck",
+    "srs",
+    "export",
+    "csv",
+    "srt",
+    "subtitles",
+    "sentence mining"
+  ],
   "bin": {
     "srt2anki": "./srt2anki.js"
   },
