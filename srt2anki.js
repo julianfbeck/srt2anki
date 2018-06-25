@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 Module = {
     TOTAL_MEMORY: 2000000000
 }
